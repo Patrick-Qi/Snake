@@ -7,14 +7,16 @@ const columns = canvas.width / size
 const startBtn = document.getElementById('start')
 const pauseBtn = document.getElementById('pause')
 
-let snake = new Snake(size, { canvas, ctx })
+let snakea = new Snakea(size, { canvas, ctx })
+let snakeb = new Snakeb(size, { canvas, ctx })
 let target = new Target(size, { canvas, ctx, rows, columns })
 let timer = null
 
 function init() {
   target.genRandomLocation()
   target.draw()
-  snake.draw()
+  snakea.draw()
+  snakeb.draw()
 }
 
 init()
@@ -23,16 +25,22 @@ function start() {
   timer = setInterval(() => {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     target.draw()
-    snake.update()
-    snake.draw()
-
-    if (snake.eatTarget(target)) {
+    snakea.update()
+    snakea.draw()
+    snakeb.update()
+    snakeb.draw()
+    if (snakea.eatTarget(target)) {
       target.genRandomLocation()
     }
-
-    snake.checkCollision()
-    document.getElementById('score').innerText = snake.targetNum
+    if (snakeb.eatTarget(target)) {
+      target.genRandomLocation()
+    }
+    snakeb.checkCollision()
+    snakea.checkCollision()
+    document.getElementById('score1').innerText = snakea.targetNum
+    document.getElementById('score2').innerText = snakeb.targetNum
   }, 150)
+
 }
 
 startBtn.addEventListener('click', () => {
@@ -45,5 +53,6 @@ pauseBtn.addEventListener('click', () => {
 
 window.addEventListener('keydown', (event) => {
   const direction = event.key.replace('Arrow', '')
-  snake.changeDirection(direction)
+  snakea.changeDirection(direction)
+  snakeb.changeDirection(direction)
 })

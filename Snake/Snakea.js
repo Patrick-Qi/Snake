@@ -1,4 +1,4 @@
-function Snake(size = 10, canvasOptions) {
+function Snakea(size = 10, canvasOptions) {
   this.x = 0
   this.y = 0
   this.size = size
@@ -9,7 +9,7 @@ function Snake(size = 10, canvasOptions) {
   this.canvasOptions = canvasOptions
 }
 
-Snake.prototype.draw = function() {
+Snakea.prototype.draw = function() {
   const { ctx } = this.canvasOptions
   ctx.fillStyle = '#fff'
 
@@ -21,7 +21,7 @@ Snake.prototype.draw = function() {
   ctx.fillRect(this.x, this.y, this.size, this.size)
 }
 
-Snake.prototype.update = function() {
+Snakea.prototype.update = function() {
   for (let i = 0; i < this.tails.length - 1; i++) {
     this.tails[i] = this.tails[i + 1]
   }
@@ -52,7 +52,7 @@ Snake.prototype.update = function() {
   }
 }
 
-Snake.prototype.changeDirection = function(direction) {
+Snakea.prototype.changeDirection = function(direction) {
   switch(direction) {
     case 'Up':
       this.xSpeed = 0
@@ -73,7 +73,7 @@ Snake.prototype.changeDirection = function(direction) {
   }
 }
 
-Snake.prototype.eatTarget = function(target) {
+Snakea.prototype.eatTarget = function(target) {
   if (this.x === target.x && this.y === target.y) {
     this.targetNum++
     return true
@@ -81,7 +81,7 @@ Snake.prototype.eatTarget = function(target) {
   return false
 }
 
-Snake.prototype.checkCollision = function() {
+Snakea.prototype.checkCollision = function() {
   for (let i = 0; i < this.tails.length; i++) {
     if (this.x === this.tails[i].x && this.y === this.tails[i].y) {
       this.targetNum = 0

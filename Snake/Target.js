@@ -13,6 +13,6 @@ Target.prototype.genRandomLocation = function() {
 
 Target.prototype.draw = function() {
   const { ctx } = this.canvasOptions
-  ctx.fillStyle = '#e83333'
-  ctx.fillRect(this.x, this.y, this.size, this.size)
+  ctx.fillStyle = '#e83333'    //填充目标方块颜色
+  ctx.fillRect(this.x, this.y, this.size, this.size)  //方块坐标以及长宽高
 }
