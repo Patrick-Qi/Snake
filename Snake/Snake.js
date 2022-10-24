@@ -86,6 +86,7 @@ function Snake(size = 10, canvasOptions) {
       if (this.x === this.tails[i].x && this.y === this.tails[i].y) {
         var info="Gameover you score is " + this.targetNum
         alert(info)
+        location.reload();
       }
     }
   }
