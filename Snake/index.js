@@ -37,6 +37,9 @@ function start() {
     }
     snakeb.checkCollision()
     snakea.checkCollision()
+    
+    checktrack()
+
     document.getElementById('score1').innerText = snakea.targetNum
     document.getElementById('score2').innerText = snakeb.targetNum
   }, 150)
@@ -56,3 +59,22 @@ window.addEventListener('keydown', (event) => {
   snakea.changeDirection(direction)
   snakeb.changeDirection(direction)
 })
+
+function checktrack() {
+  for (let i = 0; i < snakea.tails.length; i++) {
+    if (snakeb.x === snakea.tails[i].x && snakeb.y === snakea.tails[i].y) {
+      snakea.targetNum = 0
+      snakea.tails = []
+      snakeb.targetNum = 0
+      snakeb.tails = []
+    }
+  }
+  for (let i = 0; i < snakeb.tails.length; i++) {
+    if (snakea.x === snakeb.tails[i].x && snakea.y === snakeb.tails[i].y) {
+      snakea.targetNum = 0
+      snakea.tails = []
+      snakeb.targetNum = 0
+      snakeb.tails = []
+    }
+  }
+}

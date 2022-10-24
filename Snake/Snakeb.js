@@ -1,8 +1,9 @@
 function Snakeb(size = 10, canvasOptions) {
-    this.x = 0
-    this.y = 0
+    const { width, height } = canvasOptions.canvas
+    this.x = width-size
+    this.y = height-size
     this.size = size
-    this.xSpeed = size * 1
+    this.xSpeed = -size * 1
     this.ySpeed = 0
     this.targetNum = 0
     this.tails = []
