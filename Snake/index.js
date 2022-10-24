@@ -22,6 +22,8 @@ function init() {
 init()
 
 function start() {
+  
+  clearInterval(timer)
   timer = setInterval(() => {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     target.draw()
@@ -37,7 +39,7 @@ function start() {
     }
     snakeb.checkCollision()
     snakea.checkCollision()
-    
+
     checktrack()
 
     document.getElementById('score1').innerText = snakea.targetNum
@@ -63,18 +65,38 @@ window.addEventListener('keydown', (event) => {
 function checktrack() {
   for (let i = 0; i < snakea.tails.length; i++) {
     if (snakeb.x === snakea.tails[i].x && snakeb.y === snakea.tails[i].y) {
-      snakea.targetNum = 0
-      snakea.tails = []
-      snakeb.targetNum = 0
-      snakeb.tails = []
+
+      if(snakea.targetNum>snakeb.targetNum)
+      {
+        alert('snakea win!!!')
+      }
+      else if(snakeb.targetNum>snakea.targetNum)
+      {
+        alert('snakeb win!!!')
+      }
+      else
+      {
+        alert('gameover and no winner')
+      }
+      location.reload();
+      
     }
   }
   for (let i = 0; i < snakeb.tails.length; i++) {
     if (snakea.x === snakeb.tails[i].x && snakea.y === snakeb.tails[i].y) {
-      snakea.targetNum = 0
-      snakea.tails = []
-      snakeb.targetNum = 0
-      snakeb.tails = []
+      if(snakea.targetNum>snakeb.targetNum)
+      {
+        alert('snakea win!!!')
+      }
+      else if(snakeb.targetNum>snakea.targetNum)
+      {
+        alert('snakeb win!!!')
+      }
+      else
+      {
+        alert('gameover and no winner')
+      }
+      location.reload();
     }
   }
 }

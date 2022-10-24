@@ -84,8 +84,8 @@ Snakea.prototype.eatTarget = function(target) {
 Snakea.prototype.checkCollision = function() {
   for (let i = 0; i < this.tails.length; i++) {
     if (this.x === this.tails[i].x && this.y === this.tails[i].y) {
-      this.targetNum = 0
-      this.tails = []
+      alert('snakea kill itself and snakeb win!')
+      location.reload();
     }
   }
 }
