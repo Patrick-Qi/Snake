@@ -11,18 +11,15 @@
   <div class="container">
     <canvas class="canvas" width="400" height="400"></canvas>
     <div class="operations">
-      <button onclick="single()">Single</button>
-      <button onclick="double()">1v1</button>
+      <div class="score">
+        Score: <span id="score">0</span>
+      </div>
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
     </div>
   </div>
-<script>
-    function single() {
-        window.location.href='./single.html';
-    }
-    function double() {
-        window.location.href='./double.html';
-    }
-</script>
-  
+  <script src="./Target.js"></script>
+  <script src="./Snake.js"></script>
+  <script src="./index1.js"></script>
 </body>
 </html>
