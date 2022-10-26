@@ -35,20 +35,11 @@ function Snake(size = 10, canvasOptions) {
   
     const { width, height } = this.canvasOptions.canvas
   
-    if (this.x > width) {
-      this.x = 0
-    }
-  
-    if (this.y > height) {
-      this.y = 0
-    }
-  
-    if (this.x < 0) {
-      this.x = width
-    }
-  
-    if (this.y < 0) {
-      this.y = height
+    if (this.x > width||this.y > height||this.x < 0 || this.y < 0) {
+      var info="Gameover you score is " + this.targetNum;
+        alert(info);
+        clearInterval(timer);
+        location.reload();
     }
   }
   

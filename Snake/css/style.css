@@ -13,7 +13,7 @@ body {
 }
 
 .canvas {
-  background-color: #3e3e3e;
+  background:rgba(0,0,0,0.5);
   box-shadow: 0 1px 10px #3e3e3e;
   margin-right: 10px;
 }
@@ -41,4 +41,9 @@ button {
 
 button:active {
   transform: scale(0.8);
+}
+
+.head 
+{
+  background-color: #55c4d0;
 }
