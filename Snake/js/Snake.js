@@ -13,7 +13,7 @@ function Snake(size = 10, canvasOptions) {
     const { ctx } = this.canvasOptions
     ctx.fillStyle = '#fff'
   
-    for (let i = 0; i < this.tails.length; i++) {
+    for (let i = 0; i < this.tails.length; i++) {   //画出蛇每个身体方块
       const { x, y } = this.tails[i]
       ctx.fillRect(x, y, this.size, this.size)
     }
@@ -23,7 +23,7 @@ function Snake(size = 10, canvasOptions) {
   
   Snake.prototype.update = function() {
     for (let i = 0; i < this.tails.length - 1; i++) {
-      this.tails[i] = this.tails[i + 1]
+      this.tails[i] = this.tails[i + 1]     //更新此刻蛇的位置
     }
   
     if (this.targetNum > 0) {
@@ -35,7 +35,7 @@ function Snake(size = 10, canvasOptions) {
   
     const { width, height } = this.canvasOptions.canvas
   
-    if (this.x > width||this.y > height||this.x < 0 || this.y < 0) {
+    if (this.x > width||this.y > height||this.x < 0 || this.y < 0) {    //判断是否撞墙
       var info="Gameover you score is " + this.targetNum;
         alert(info);
         clearInterval(timer);
@@ -43,7 +43,7 @@ function Snake(size = 10, canvasOptions) {
     }
   }
   
-  Snake.prototype.changeDirection = function(direction) {
+  Snake.prototype.changeDirection = function(direction) {   //改变方向函数
     switch(direction) {
       case 'Up':
         this.xSpeed = 0

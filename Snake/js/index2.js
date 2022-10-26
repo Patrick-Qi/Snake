@@ -40,7 +40,7 @@ function start() {
     snakeb.checkCollision()
     snakea.checkCollision()
 
-    checktrack()
+    checktrack()   //判断两条蛇是否互撞
 
     document.getElementById('score1').innerText = snakea.targetNum
     document.getElementById('score2').innerText = snakeb.targetNum
