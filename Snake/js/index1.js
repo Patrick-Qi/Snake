@@ -1,9 +1,19 @@
 const canvas = document.querySelector('.canvas')
+
 const ctx = canvas.getContext('2d')
 
-const size = 10     //定义方块大小
+const size = 20     //定义方块大小
 const rows = canvas.height / size
 const columns = canvas.width / size       //定义行数和列数
+
+var img = new Image();
+img.src = "./img/head.png";
+img.onload = function(){
+      //var pat = ctx.createPattern(img,"repeat");
+      //ctx.fillStyle=pat;
+      //ctx.fillRect(100,100,100,100);
+      ctx.drawImage(img,0,0,20,20)
+  }
 
 const startBtn = document.getElementById('start')
 const pauseBtn = document.getElementById('pause')

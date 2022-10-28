@@ -1,6 +1,6 @@
 const canvas = document.querySelector('.canvas')
 const ctx = canvas.getContext('2d')
-const size = 10
+const size = 20
 const rows = canvas.height / size
 const columns = canvas.width / size
 

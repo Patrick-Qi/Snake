@@ -8,17 +8,34 @@ function Snake(size = 10, canvasOptions) {
     this.tails = []
     this.canvasOptions = canvasOptions
   }
-  
+
+
+  //var img = new Image();
+  //img.src = "./head.png";
+  //img.onload = function(){
+      //var pat = ctx.createPattern(img,"repeat");
+      //ctx.fillStyle=pat;
+      //ctx.fillRect(100,100,100,100);
+      //ctx.drawImage(img,100,100,10,10)
+  //}
+
+
+
   Snake.prototype.draw = function() {
     const { ctx } = this.canvasOptions
-    ctx.fillStyle = '#fff'
-  
+    
+    var img = new Image();  //创建一个图片对象
+    img.src = "./img/head.png";
+    
+    //ctx.fillStyle = '#fff'
     for (let i = 0; i < this.tails.length; i++) {   //画出蛇每个身体方块
       const { x, y } = this.tails[i]
-      ctx.fillRect(x, y, this.size, this.size)
+      //ctx.fillRect(x, y, this.size, this.size)
+      ctx.drawImage(img,x,y,this.size,this.size);    //画出身体
     }
-  
-    ctx.fillRect(this.x, this.y, this.size, this.size)
+    
+    ctx.drawImage(img,this.x,this.y,this.size,this.size);//画出头部
+    //ctx.fillRect(this.x, this.y, this.size, this.size)
   }
   
   Snake.prototype.update = function() {
