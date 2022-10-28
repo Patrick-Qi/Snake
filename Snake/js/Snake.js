@@ -52,7 +52,7 @@ function Snake(size = 10, canvasOptions) {
   
     const { width, height } = this.canvasOptions.canvas
   
-    if (this.x > width||this.y > height||this.x < 0 || this.y < 0) {    //判断是否撞墙
+    if (this.x > width-size||this.y > height||this.x < 0 || this.y < 0) {    //判断是否撞墙
       var info="Gameover you score is " + this.targetNum;
         alert(info);
         clearInterval(timer);

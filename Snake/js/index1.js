@@ -31,6 +31,7 @@ function init() {
 init()
 
 function start() {
+  clearInterval(timer);
   timer = setInterval(() => {
     ctx.clearRect(0, 0, canvas.width, canvas.height) //清空画布
     target.draw()
