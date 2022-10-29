@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snake Game</title>
-  <link rel="stylesheet" href="./css/style.css"></link>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="./css/style.css"></link>
+  </head>
 
-  <body background="./img/background.jpeg"style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
-  <h2>Snake Game</h2>
-  <div class="container">
-    <canvas class="canvas" width="800" height="800"></canvas>
-    <div class="operations">
-      <button onclick="single()">Single</button>
-      <button onclick="double()">1v1</button>
+  <body background="../Snake/resources/background/grass.png"style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
+    <audio src="../Snake/resources/music/bgm.mp3" loop="loop" controls="controls" autoplay="autoplay" hidden="true"></audio>
+    <div class="container">
+      <canvas class="canvas" width="800" height="800"></canvas>
+      <div class="operations">
+        <button onclick="single()">Single</button>
+        <button onclick="double()">1v1</button>
+      </div>
     </div>
-  </div>
-<script>
-    function single() {
-        window.location.href='./single.html';
-    }
-    function double() {
-        window.location.href='./double.html';
-    }
-</script>
-  
-</body>
+    <script>
+        function single()
+        {
+            window.location.href='./single.html';
+        }
+        function double()
+        {
+            window.location.href='./double.html';
+        }
+    </script>
+  </body>
 </html>

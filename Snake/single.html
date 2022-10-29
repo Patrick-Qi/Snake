@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snake Game</title>
-  <link rel="stylesheet" href="./css/style.css"></link>
-</head>
-<body background="./img/background.jpeg"style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
-  <h2>Snake Game</h2>
-  <div class="container">
-    <canvas class="canvas" width="800" height="800"></canvas>
-    <div class="operations">
-      <div class="score">
-        Score: <span id="score">0</span>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="./css/style.css"></link>
+  </head>
+  <body background="../Snake/resources/background/grass.png"style=" background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
+    <audio src="../Snake/resources/music/bgm.mp3" loop="loop" controls="controls" autoplay="autoplay" hidden="true"></audio>
+    <div class="container">
+      <canvas class="canvas" width="800" height="800"></canvas>
+      <div class="operations">
+        <div class="score">
+          Score: <span id="score">0</span>
+        </div>
+        <button id="start">Start</button>
+        <button id="pause">Pause</button>
       </div>
-      <button id="start">Start</button>
-      <button id="pause">Pause</button>
     </div>
-  </div>
-  <script src="./js/Target.js"></script>
-  <script src="./js/Snake.js"></script>
-  <script src="./js/index1.js"></script>
-</body>
+    <script src="./js/Target.js"></script>
+    <script src="./js/Snake.js"></script>
+    <script src="./js/index1.js"></script>
+  </body>
 </html>
